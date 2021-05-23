@@ -25,7 +25,8 @@
     "test:library": "npm run build && node tests/library/test.js",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "commitmsg": "validate-commit-msg",
-    "prep-release": "git clean -dfx && npm install && npm run build && npm run changelog"
+    "prep-release": "git clean -dfx && npm install && npm run build && npm run changelog",
+     "preinstall": "npx npm-force-resolutions"
   },
   "repository": {
     "type": "git",
@@ -79,5 +80,8 @@
     "validate-commit-msg": {
       "helpMessage": "\nThis project uses commitizen to document changes. Please try:\nnpm install commitizen -g && git cz\n"
     }
+  },
+  "resolutions": {
+    "graceful-fs": "^4.2.4"
   }
 }
